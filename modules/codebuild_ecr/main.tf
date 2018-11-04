@@ -3,7 +3,6 @@ resource "aws_codebuild_project" "this" {
   build_timeout = "5"
   service_role = "${var.iam_role_arn}"
   badge_enabled = "True"
-  privileged_mode = "True"
 
   artifacts {
     type = "NO_ARTIFACTS"
@@ -13,6 +12,7 @@ resource "aws_codebuild_project" "this" {
     compute_type = "${var.compute_type}"
     image = "${var.image}"
     type = "${var.env_type}"
+    privileged_mode = "True"
 
     environment_variable {
       "name"  = "AWS_DEFAULT_REGION"
