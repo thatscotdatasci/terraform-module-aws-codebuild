@@ -3,6 +3,7 @@ resource "aws_codebuild_project" "this" {
   build_timeout = "5"
   service_role = "${var.iam_role_arn}"
   badge_enabled = "True"
+  privileged_mode = "True"
 
   artifacts {
     type = "NO_ARTIFACTS"
