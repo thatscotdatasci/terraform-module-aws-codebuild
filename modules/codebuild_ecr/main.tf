@@ -2,7 +2,7 @@ resource "aws_codebuild_project" "this" {
   name = "${var.project_name}"
   build_timeout = "5"
   service_role = "${var.iam_role_arn}"
-  badge_enabled = "True"
+  badge_enabled = true
 
   artifacts {
     type = "NO_ARTIFACTS"
@@ -12,7 +12,7 @@ resource "aws_codebuild_project" "this" {
     compute_type = "${var.compute_type}"
     image = "${var.image}"
     type = "${var.env_type}"
-    privileged_mode = "True"
+    privileged_mode = true
 
     environment_variable {
       "name"  = "AWS_DEFAULT_REGION"
@@ -39,7 +39,7 @@ resource "aws_codebuild_project" "this" {
     type = "GITHUB"
     location = "${var.github_project_url}"
     git_clone_depth = 1
-    report_build_status = "True"
+    report_build_status = true
   }
 
   tags {
