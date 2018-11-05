@@ -33,6 +33,11 @@ resource "aws_codebuild_project" "this" {
       "name"  = "IMAGE_TAG"
       "value" = "${var.image_tag}"
     }
+
+    environment_variable {
+      "name"  = "CONTAINER_NAME"
+      "value" = "${var.container_name}"
+    }
   }
 
   source {

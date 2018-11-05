@@ -38,6 +38,10 @@ variable "image_tag" {
   default = "latest"
 }
 
+variable "container_name" {
+  description = "Container name in the task definition of the ECS service the image will be deployed to"
+}
+
 variable "github_project_url" {
   description = "URL of the GitHub project to be built"
 }
